@@ -56,7 +56,7 @@ border: 2px solid #F62A53;
   padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */</string>
       </property>
       <property name="text">
-       <string>Drück mich zum Testen!</string>
+       <string>Drück mich!</string>
       </property>
      </widget>
     </item>
@@ -135,6 +135,46 @@ border: 2px solid #F62A53;
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>5</number>
+          </property>
+          <property name="rightMargin">
+           <number>5</number>
+          </property>
+          <property name="bottomMargin">
+           <number>5</number>
+          </property>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Settings</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>anders zeug</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
@@ -168,30 +208,30 @@ font: 12pt &quot;Arial&quot;;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0">
           <property name="spacing">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="leftMargin">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="rightMargin">
            <number>20</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>5</number>
           </property>
           <item alignment="Qt::AlignRight">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="uhrzeitLabel">
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 255);
 font: 12pt &quot;Arial&quot;;</string>
             </property>
             <property name="text">
-             <string>13:40:20</string>
+             <string>xx:xx:xx</string>
             </property>
            </widget>
           </item>
