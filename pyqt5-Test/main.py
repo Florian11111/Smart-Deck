@@ -1,8 +1,9 @@
 import sys
 from PyQt5.QtCore import Qt, QTimer, QDateTime
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QFrame
-from main_ui import Ui_MainWindow  # Hier den richtigen Importpfad anpassen 
-from speedtestWidget import MyForm 
+# eigene files
+from main_ui import Ui_MainWindow
+from speedtestWidget import MyForm
 
 UHRZEIT_MIT_SEKUNDEN = True
 
@@ -39,7 +40,7 @@ class MyWindow(QMainWindow):
         self.setWindowFlag(Qt.FramelessWindowHint)
 
     def knopf1_gedrueckt(self):
-        print("Knopf1 wurde gedrückt")
+        self.ui.widgetStack.setCurrentIndex(1)
 
     def uhrzeit_aktualisieren(self):
         aktuelle = QDateTime.currentDateTime()
@@ -54,4 +55,3 @@ if __name__ == '__main__':
     window = MyWindow()
     window.show()
     sys.exit(app.exec_())
-

@@ -45,70 +45,6 @@
     <property name="spacing">
      <number>5</number>
     </property>
-    <item row="1" column="0" alignment="Qt::AlignHCenter">
-     <widget class="QPushButton" name="knopf1">
-      <property name="styleSheet">
-       <string notr="true">border-radius: 5px;
-background-color: rgb(47, 47, 53);
-font: 10pt &quot;Arial&quot;;
-color: rgb(255, 255, 255);
-border: 2px solid #F62A53;
-  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */</string>
-      </property>
-      <property name="text">
-       <string>Drück mich!</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-     <widget class="QFrame" name="widgetFrame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="sizeIncrement">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="lineWidth">
-       <number>1</number>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QFrame" name="kopfframe">
       <property name="maximumSize">
@@ -236,6 +172,130 @@ font: 12pt &quot;Arial&quot;;</string>
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QStackedWidget" name="widgetStack">
+      <widget class="QWidget" name="page">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <widget class="QFrame" name="widgetFrame">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="baseSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2"/>
+     </widget>
+    </item>
+    <item row="1" column="0" alignment="Qt::AlignLeft">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <property name="spacing">
+        <number>12</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item alignment="Qt::AlignLeft">
+        <widget class="QPushButton" name="knopf1">
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5px;
+background-color: rgb(47, 47, 53);
+font: 8pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);
+border: 2px solid #F62A53;
+  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */</string>
+         </property>
+         <property name="text">
+          <string>Zurück</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 5px;
+background-color: rgb(47, 47, 53);
+font: 8pt &quot;Arial&quot;;
+color: rgb(255, 255, 255);
+border: 2px solid #F62A53;
+  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */</string>
+         </property>
+         <property name="text">
+          <string>Nächste</string>
+         </property>
         </widget>
        </item>
       </layout>
