@@ -84,15 +84,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.uhrzeitLabel, 0, QtCore.Qt.AlignRight)
         self.horizontalLayout.addWidget(self.uhrzeitFrame, 0, QtCore.Qt.AlignRight)
         self.gridLayout.addWidget(self.kopfframe, 0, 0, 1, 1)
-        self.knopf1 = QtWidgets.QPushButton(self.centralwidget)
-        self.knopf1.setStyleSheet("border-radius: 5px;\n"
-"background-color: rgb(47, 47, 53);\n"
-"font: 10pt \"Arial\";\n"
-"color: rgb(255, 255, 255);\n"
-"border: 2px solid #F62A53;\n"
-"  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */")
-        self.knopf1.setObjectName("knopf1")
-        self.gridLayout.addWidget(self.knopf1, 1, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.widgetStack = QtWidgets.QStackedWidget(self.centralwidget)
         self.widgetStack.setObjectName("widgetStack")
         self.page = QtWidgets.QWidget()
@@ -120,7 +111,40 @@ class Ui_MainWindow(object):
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.widgetStack.addWidget(self.page_2)
-        self.gridLayout.addWidget(self.widgetStack, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.widgetStack, 3, 0, 1, 1)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setSpacing(12)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.knopf1 = QtWidgets.QPushButton(self.frame)
+        self.knopf1.setStyleSheet("border-radius: 5px;\n"
+"background-color: rgb(47, 47, 53);\n"
+"font: 8pt \"Arial\";\n"
+"color: rgb(255, 255, 255);\n"
+"border: 2px solid #F62A53;\n"
+"  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */")
+        self.knopf1.setObjectName("knopf1")
+        self.horizontalLayout_5.addWidget(self.knopf1, 0, QtCore.Qt.AlignLeft)
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
+        self.pushButton_2.setSizePolicy(sizePolicy)
+        self.pushButton_2.setStyleSheet("border-radius: 5px;\n"
+"background-color: rgb(47, 47, 53);\n"
+"font: 8pt \"Arial\";\n"
+"color: rgb(255, 255, 255);\n"
+"border: 2px solid #F62A53;\n"
+"  padding: 10px 20px; /* Innenabstand (oben/unten links/rechts) */")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_5.addWidget(self.pushButton_2, 0, QtCore.Qt.AlignRight)
+        self.gridLayout.addWidget(self.frame, 1, 0, 1, 1, QtCore.Qt.AlignLeft)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -133,4 +157,5 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "anders zeug"))
         self.label_2.setText(_translate("MainWindow", "Speed Test"))
         self.uhrzeitLabel.setText(_translate("MainWindow", "xx:xx:xx"))
-        self.knopf1.setText(_translate("MainWindow", "Drück mich!"))
+        self.knopf1.setText(_translate("MainWindow", "Zurück"))
+        self.pushButton_2.setText(_translate("MainWindow", "Nächste"))

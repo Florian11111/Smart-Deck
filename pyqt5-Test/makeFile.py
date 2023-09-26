@@ -41,6 +41,9 @@ if __name__ == '__main__':
     for ui_file in ui_files:
         convert_ui_to_py(ui_file)
 
+    # nur compelieren
+    if '-norun' in sys.argv:
+        exit(0)
     # Starte die main.py-Datei
     if '-fertig' in sys.argv:
         create_executable()
