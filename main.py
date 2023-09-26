@@ -1,20 +1,50 @@
-import serial
-import subprocess
-import pyautogui
+from flask import Flask, request, jsonify
+from flask_restful import Api, Resource
+from functools import wraps
 
-ser = serial.Serial('COM3', 9600) # Passe 'COM3' entsprechend deinem Arduino an
+app = Flask(__name__)
+api = Api(app)
 
-while True:
-    data = ser.readline().decode('utf-8').strip() # Lese die Daten von der seriellen Schnittstelle
-    launcher_paint = "C:\Program Files\paint.net\paintdotnet.exe"
-    launcher_minecraft = "C:\XboxGames\Minecraft Launcher\Content\Minecraft.exe"
-    # Hier kannst du den empfangenen Wert verwenden, z.B. in einem anderen Python-Programm
-    print(f"Empfangener Wert: {data}")
-    if data == str(1):
-        subprocess.run(launcher_minecraft)
-    if data == str(2):
-        pyautogui.keyDown('ctrl')
-        pyautogui.keyDown('alt')
-        pyautogui.press("#")
-        pyautogui.keyUp('alt')
-        pyautogui.keyUp('ctrl')
+# Benutzer und Token für die Authentifizierung
+users = {
+    "username": "password123"
+}
+
+# Funktion zur Token-Authentifizierung
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get("Token")
+
+        if not token:
+            return jsonify({"message": "Token fehlt"}), 401
+
+        if token not in users.values():
+            return jsonify({"message": "Ungültiger Token"}), 401
+
+        return f(*args, **kwargs)
+
+    return decorated
+
+# Dummy-Speicher für Daten
+data = {}
+
+# Ressource für Daten setzen
+class DataResource(Resource):
+    @token_required
+    def get(self, key):
+        if key in data:
+            return {key: data[key]}
+        else:
+            return {"message": "Datensatz nicht gefunden"}, 404
+
+    @token_required
+    def put(self, key):
+        value = request.json.get("value")
+        data[key] = value
+        return {key: value}
+
+api.add_resource(DataResource, "/data/<string:key>")
+
+if __name__ == "__main__":
+    app.run(debug=True, ssl_context=("path/to/your/certificate.pem", "path/to/your/private-key.pem"))
